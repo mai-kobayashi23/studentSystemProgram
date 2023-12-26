@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('新規登録') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('user.show') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -66,9 +66,19 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('登録する') }}
                                 </button>
+
                             </div>
                         </div>
                     </form>
+
+                    <div class="form-group row mb-0">
+                        <div class="col-md-6 offset-md-4">
+                            <a href=""><button type="submit" class="btn btn-primary">
+                                    {{ __('戻る') }}
+                                </button></a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
