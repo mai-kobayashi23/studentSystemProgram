@@ -36,10 +36,4 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    public function selectAll()
-    {
-        $query = \DB::table('students')->select('id', 'name')->get();
-        return $query;
-    }
 }

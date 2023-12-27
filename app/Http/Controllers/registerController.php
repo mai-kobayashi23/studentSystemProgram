@@ -6,18 +6,6 @@ use Illuminate\Http\Request;
 
 class registerController extends Controller
 {
-
-    // public function store(Request $request)
-    // // {
-    // //     $user = new User();
-    // //     $user->user_name = $request->user_name;
-    // //     return redirect()->route('user.index');
-    // // }
-    // public function __construct()
-    // {
-    //     $this->user_name = new User();
-    // }
-
     /**
      * Display a listing of the resource.
      *
@@ -33,8 +21,15 @@ class registerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function insert()
+    public function insert(Request $request)
     {
+        \DB::table('users')->insert([
+            'id' => $request->id,
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => $request->password,
+        ]);
+
         return view('/welcome');
     }
 

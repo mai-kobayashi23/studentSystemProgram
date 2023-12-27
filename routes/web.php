@@ -26,7 +26,9 @@ Auth::routes();
 /** ユーザー  **/
 Route::get('/homemenu', 'HomeController@index')->name('user.menu'); //メニュー画面表示
 Route::post('/homemenu', 'HomeController@index')->name('user.menu'); //メニュー画面表示
-Route::post('/register', 'registerController@index')->name('user.show');  //新規登録画面表示
+// Route::post('/register', 'registerController@insert')->name('user.show');  //新規登録画面表示
+Route::post('/register', 'UserController@insert')->name('user.show');  //新規登録画面表示
+
 
 /** 学生  **/
 Route::get('/studentTop', 'StudentController@index')->name('student.show'); //一覧画面表示
